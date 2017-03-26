@@ -1,0 +1,11 @@
+{
+    "alias": "acl",
+    "name": "Ace acl",
+    "author": "Kean",
+    "description": "Ace acl",
+    "namespace": "App\\Module\\Acl",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

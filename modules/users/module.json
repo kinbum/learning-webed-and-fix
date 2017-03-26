@@ -1,0 +1,11 @@
+{
+    "alias": "users",
+    "name": "Ace users",
+    "author": "Kean",
+    "description": "Ace users",
+    "namespace": "App\\Module\\Users",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

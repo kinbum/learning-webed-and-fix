@@ -1,0 +1,11 @@
+{
+    "alias": "menu",
+    "name": "ace menu management",
+    "author": "kean",
+    "description": "ace menu management",
+    "namespace": "App\\Module\\Menu",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

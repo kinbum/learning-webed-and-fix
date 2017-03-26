@@ -1,0 +1,11 @@
+{
+    "alias": "assets-management",
+    "name": "Ace assets-management",
+    "author": "Kean",
+    "description": "Ace assets-managament",
+    "namespace": "App\\Module\\AssetManagement",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

@@ -1,0 +1,11 @@
+{
+    "alias": "auth",
+    "name": "Ace authenticate",
+    "author": "Kean",
+    "description": "Ace authenticate",
+    "namespace": "App\\Module\\Auth",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

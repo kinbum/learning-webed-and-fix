@@ -1,0 +1,11 @@
+{
+    "alias": "settings",
+    "name": "Ace settings",
+    "author": "Kean",
+    "description": "Ace settings",
+    "namespace": "App\\Module\\Settings",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

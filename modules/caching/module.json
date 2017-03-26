@@ -1,0 +1,11 @@
+{
+    "alias": "caching",
+    "name": "Ace caching",
+    "author": "kean",
+    "description": "Ace caching",
+    "namespace": "App\\Module\\Caching",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

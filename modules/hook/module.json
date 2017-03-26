@@ -1,0 +1,11 @@
+{
+    "alias": "hook",
+    "name": "Ace hook",
+    "author": "kean",
+    "description": "Ace hook",
+    "namespace": "App\\Module\\Hook",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}

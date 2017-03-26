@@ -1,0 +1,26 @@
+<?php namespace App\Module\Base\Http\Middleware;
+
+use \Closure;
+use Illuminate\Http\Request;
+
+class CorsMiddleware
+{
+   
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @param  array|string $role
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        return $next($request)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+            ->header('Access-Control-Allow-Credentials', 'true')
+            ->header('Access-Control-Max-Age', '10000')
+            ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');;
+    }
+}

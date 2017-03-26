@@ -1,0 +1,11 @@
+{
+    "alias": "base",
+    "name": "module base application",
+    "author": "kean",
+    "description": "module base application",
+    "namespace": "App\\Module\\Base",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
+}
