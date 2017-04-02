@@ -17,16 +17,16 @@
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                {{-- @php do_action('header_custom_menu') @endphp --}}
+                @php do_action('header_custom_menu') @endphp
                 <li class="dropdown user-menu">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                        data-close-others="true">
-                        <img alt="{{-- $loggedInUser->display_name or '' --}}"
-                             class="img-circle user-image"
-                             src="{{-- isset($loggedInUser->avatar) ? get_image($loggedInUser->avatar) : get_image(null) --}}"
+                        <img alt="{{ $loggedInUser->display_name or '' }}"
+                             class="img-rectangle user-image"
+                             src="{{ isset($loggedInUser->avatar) ? get_image($loggedInUser->avatar) : get_image(null) }}"
                              width="25"
                              height="25">
-                        <span class="hidden-xs">{{-- $loggedInUser->display_name or '' --}}</span>
+                        <span class="hidden-xs">{{ $loggedInUser->display_name or '' }}</span>
                         <span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -34,8 +34,8 @@
                         <li class="user-header">
                             <img alt=""
                                  class="img-circle"
-                                 src="{{-- isset($loggedInUser->avatar) ? get_image($loggedInUser->avatar) : get_image(null) --}}">
-                            <p>{{-- $loggedInUser->display_name or '' --}}</p>
+                                 src="{{ isset($loggedInUser->avatar) ? get_image($loggedInUser->avatar) : get_image(null) }}">
+                            <p>{{ $loggedInUser->display_name or '' }}</p>
                         </li>
                         <!-- Menu Footer-->
                         @if (isset($loggedInUser))

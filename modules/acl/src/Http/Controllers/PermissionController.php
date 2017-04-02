@@ -19,7 +19,7 @@ class PermissionController extends BaseAdminController
 
         $this->getDashboardMenu($this->module . '-permissions');
 
-        // $this->breadcrumbs->addLink('ACL')->addLink('Permissions', route('admin::acl-permissions.index.get'));;
+        $this->breadcrumbs->addLink('ACL')->addLink('Permissions', route('acl-permissions.index.get'));;
     }
 
     public function getIndex(PermissionsListDataTable $permissionsListDataTable)

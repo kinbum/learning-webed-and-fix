@@ -30,10 +30,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SettingContract::class, function () {
             $repository = new SettingRepository(new EloquentSetting);
 
-            if (config('ace-caching.repository.enabled')) {
-                return new SettingRepositoryCacheDecorator($repository);
-            }
-
             return $repository;
         });
     }

@@ -63,7 +63,6 @@ abstract class BaseController extends Controller
              $data = $this->dis;
         }
         if( !empty($bind) ) $bind = $bind . '.';
-
         if( property_exists( $this, 'module' ) && $this->module ) {
             return view( $this->module . '::' . $bind . $viewName, $data );
         }

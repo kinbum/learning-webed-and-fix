@@ -1,17 +1,13 @@
 <?php namespace App\Module\Users\Repositories;
 
-use App\Module\Caching\Services\Traits\Cacheable;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 use App\Module\Base\Repositories\Eloquent\Traits\EloquentUseSoftDeletes;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
 use App\Module\Users\Models\Contracts\UserModelContract;
 use App\Module\Users\Models\User;
 use App\Module\Users\Repositories\Contracts\UserRepositoryContract;
 
-class UserRepository extends EloquentBaseRepository implements UserRepositoryContract, CacheableContract
+class UserRepository extends EloquentBaseRepository implements UserRepositoryContract
 {
-    use Cacheable;
-
     use EloquentUseSoftDeletes;
 
     protected $rules = [

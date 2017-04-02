@@ -16,7 +16,7 @@ class SettingController extends BaseAdminController
 
         $this->repository = $settingRepository;
 
-        // $this->breadcrumbs->addLink('Settings', route('admin::settings.index.get'));
+        $this->breadcrumbs->addLink('Settings', route('settings.index.get'));
 
         $this->getDashboardMenu($this->module);
 

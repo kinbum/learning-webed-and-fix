@@ -9,6 +9,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "barryvdh/laravel-debugbar": "^2.3",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "^2.1",
@@ -25,19 +26,20 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Core\\Module\\": "core/module/src/",
             "Yajra\\Datatables\\": "core/datatables/src/",
             "Collective\\Html\\": "core/form-html-collective/src/",
-            "App\\Module\\Base\\": "modules/base/src",
-            "App\\Module\\AssetManagement\\": "modules/assets-management/src",
-            "App\\Module\\Menu\\": "modules/menu/src",
-            "App\\Module\\Hook\\": "modules/hook/src",
-            "App\\Module\\Caching\\": "modules/caching/src",
-            "App\\Module\\Users\\": "modules/users/src",
-            "App\\Module\\Auth\\": "modules/auth/src",
-            "App\\Module\\Acl\\": "modules/acl/src",
-            "App\\Module\\Elfinder\\": "modules/elfinder/src",
-            "App\\Module\\Settings\\": "modules/settings/src"
+            "App\\Module\\Base\\": "modules/base/src/",
+            "App\\Module\\AssetManagement\\": "modules/assets-management/src/",
+            "App\\Module\\Menu\\": "modules/menu/src/",
+            "App\\Module\\Hook\\": "modules/hook/src/",
+            "App\\Module\\Caching\\": "modules/caching/src/",
+            "App\\Module\\Users\\": "modules/users/src/",
+            "App\\Module\\Auth\\": "modules/auth/src/",
+            "App\\Module\\Acl\\": "modules/acl/src/",
+            "App\\Module\\Elfinder\\": "modules/elfinder/src/",
+            "App\\Module\\Settings\\": "modules/settings/src/",
+            "App\\Module\\ModulesManagement\\": "modules/modules-management/src",
+            "App\\Module\\Pages\\": "modules/pages/src"
         },
         "files": [
             "core/form-html-collective/src/helpers.php"

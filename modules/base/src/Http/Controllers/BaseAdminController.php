@@ -33,6 +33,9 @@ abstract class BaseAdminController extends BaseController
 
      public function __construct () {
          parent::__construct();
+        $this->breadcrumbs = \Breadcrumbs::setBreadcrumbClass('breadcrumb')
+            ->setContainerTag('ol');
+
          $this->middleware(function (Request $request, $next) {
             $this->loggedInUser = $request->user();
             view()->share([

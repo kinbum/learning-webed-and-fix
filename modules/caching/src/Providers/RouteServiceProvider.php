@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = ' App\Module\Caching\Http\Controllers';
+    protected $namespace = 'App\Module\Caching\Http\Controllers';
 
     public function map()
     {

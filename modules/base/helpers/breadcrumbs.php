@@ -6,6 +6,6 @@ if (!function_exists('breadcrumbs')) {
      */
     function breadcrumbs()
     {
-        return \WebEd\Base\Core\Facades\BreadcrumbsFacade::getFacadeRoot();
+        return \App\Module\Base\Facades\BreadcrumbsFacade::getFacadeRoot();
     }
 }

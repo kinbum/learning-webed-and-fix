@@ -5,7 +5,5 @@
     "description": "module base application",
     "namespace": "App\\Module\\Base",
     "version": "1.0",
-    "autoload": "psr-4",
-    "enabled": true,
-    "installed": true
+    "autoload": "psr-4"
 }

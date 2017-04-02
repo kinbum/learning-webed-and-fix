@@ -4,7 +4,7 @@ use Illuminate\Support\ServiceProvider;
 
 class BootstrapModuleServiceProvider extends ServiceProvider
 {
-    protected $module = ' App\Module\Caching';
+    protected $module = 'App\Module\Caching';
 
     /**
      * Bootstrap any application services.
@@ -35,16 +35,16 @@ class BootstrapModuleServiceProvider extends ServiceProvider
 
     private function registerMenu()
     {
-        // \DashboardMenu::registerItem([
-        //     'id' => 'webed-caching',
-        //     'priority' => 2,
-        //     'parent_id' => 'webed-configuration',
-        //     'heading' => null,
-        //     'title' => 'Caching',
-        //     'font_icon' => 'fa fa-circle-o',
-        //     'link' => route('admin::webed-caching.index.get'),
-        //     'css_class' => null,
-        //     'permissions' => ['view-cache'],
-        // ]);
+        \DashboardMenu::registerItem([
+            'id' => 'ace-caching',
+            'priority' => 2,
+            'parent_id' => 'ace-configuration',
+            'heading' => null,
+            'title' => 'Caching',
+            'font_icon' => 'fa fa-circle-o',
+            'link' => route('caching.index.get'),
+            'css_class' => null,
+            'permissions' => ['view-cache'],
+        ]);
     }
 }

@@ -1,4 +1,4 @@
-@extends('webed-core::admin._master')
+@extends('base::admin._master')
 
 @section('css')
 
@@ -24,14 +24,14 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <a href="{{ route('admin::webed-caching.clear-cms-cache.get') }}"
+                        <a href="{{ route('caching.clear-cms-cache.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
                            class="btn btn-danger">
                             Clear cms caching
                         </a>
-                        <a href="{{ route('admin::webed-caching.refresh-compiled-views.get') }}"
+                        <a href="{{ route('caching.refresh-compiled-views.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
@@ -40,14 +40,14 @@
                         </a>
                     </div>
                     <div class="form-group">
-                        <a href="{{ route('admin::webed-caching.create-config-cache.get') }}"
+                        <a href="{{ route('caching.create-config-cache.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
                            class="btn green">
                             Create config cache
                         </a>
-                        <a href="{{ route('admin::webed-caching.clear-config-cache.get') }}"
+                        <a href="{{ route('caching.clear-config-cache.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
@@ -56,14 +56,14 @@
                         </a>
                     </div>
                     <div class="form-group">
-                        <a href="{{ route('admin::webed-caching.optimize-class.get') }}"
+                        <a href="{{ route('caching.optimize-class.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
                            class="btn purple">
                             Optimize class loader
                         </a>
-                        <a href="{{ route('admin::webed-caching.clear-compiled-class.get') }}"
+                        <a href="{{ route('caching.clear-compiled-class.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
@@ -72,14 +72,14 @@
                         </a>
                     </div>
                     <div class="form-group hidden">
-                        <a href="{{ route('admin::webed-caching.create-route-cache.get') }}"
+                        <a href="{{ route('caching.create-route-cache.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"
                            class="btn yellow-crusta">
                             Create route cache
                         </a>
-                        <a href="{{ route('admin::webed-caching.clear-route-cache.get') }}"
+                        <a href="{{ route('caching.clear-route-cache.get') }}"
                            data-toggle="confirmation"
                            data-placement="right"
                            title="Are you sure?"

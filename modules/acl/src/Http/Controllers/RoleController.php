@@ -20,9 +20,9 @@ class RoleController extends BaseAdminController
 
         $this->getDashboardMenu($this->module . '-roles');
 
-        // $this->breadcrumbs
-        //     ->addLink('ACL')
-        //     ->addLink('Roles', route('acl-roles.index.get'));
+        $this->breadcrumbs
+            ->addLink('ACL')
+            ->addLink('Roles', route('acl-roles.index.get'));
     }
 
     public function getIndex(RolesListDataTable $rolesListDataTable)
@@ -95,7 +95,7 @@ class RoleController extends BaseAdminController
         $this->dis['superAdminRole'] = false;
 
         $this->setPageTitle('Create role');
-        // $this->breadcrumbs->addLink('Create role');
+        $this->breadcrumbs->addLink('Create role');
 
         $this->dis['checkedPermissions'] = [];
 
@@ -153,7 +153,7 @@ class RoleController extends BaseAdminController
      */
     public function getEdit(PermissionRepositoryContract $permissionRepository, $id)
     {
-        // $this->breadcrumbs->addLink('Edit role');
+        $this->breadcrumbs->addLink('Edit role');
         $this->dis['superAdminRole'] = false;
 
         $item = $this->repository->find($id);

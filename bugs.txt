@@ -1,0 +1,4 @@
+#error: No hint path defined.
+--fix: Go module provider change view path for module.
+#bug: Load provider not found
+--fix: run command composer dumpautoload

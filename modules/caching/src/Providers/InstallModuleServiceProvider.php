@@ -6,6 +6,8 @@ class InstallModuleServiceProvider extends ServiceProvider
 {
     protected $module = 'App\Module\Caching';
 
+    protected $moduleAlias = 'caching';
+
     /**
      * Bootstrap the application services.
      *
@@ -30,5 +32,9 @@ class InstallModuleServiceProvider extends ServiceProvider
 
     private function booted()
     {
+        acl_permission()
+            ->registerPermission('View cache management page', 'view-cache', $this->module)
+            ->registerPermission('Modify cache', 'modify-cache', $this->module)
+            ->registerPermission('Clear cache', 'clear-cache', $this->module);
     }
 }

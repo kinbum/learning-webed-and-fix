@@ -1,15 +1,11 @@
 <?php namespace App\Module\Acl\Repositories;
 
 use App\Module\Acl\Models\Contracts\RoleModelContract;
-use App\Module\Caching\Services\Traits\Cacheable;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
-
 use App\Module\Acl\Repositories\Contracts\RoleRepositoryContract;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 
-class RoleRepository extends EloquentBaseRepository implements RoleRepositoryContract, CacheableContract
+class RoleRepository extends EloquentBaseRepository implements RoleRepositoryContract
 {
-    use Cacheable;
     protected $rules = [
         'name' => 'required|between:3,100|string',
         'slug' => 'required|between:3,100|unique:roles|alpha_dash',

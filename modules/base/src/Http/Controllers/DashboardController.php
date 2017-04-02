@@ -7,6 +7,7 @@ class DashboardController extends BaseAdminController
     public function __construct()
     {
         parent::__construct();
+        $this->breadcrumbs ->addLink('Ace', route('dashboard.index.get'), '<i class="icon-home mr5"></i>');
     }
 
     public function index () {

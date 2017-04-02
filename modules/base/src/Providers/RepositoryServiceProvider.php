@@ -19,10 +19,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ViewTrackerRepositoryContract::class, function () {
             $repository = new ViewTrackerRepository(new ViewTracker());
 
-            if (config('ace-caching.repository.enabled')) {
-                return new ViewTrackerRepositoryCacheDecorator($repository);
-            }
-
             return $repository;
         });
     }

@@ -1,0 +1,9 @@
+{
+    "alias": "pages",
+    "name": "Ace pages",
+    "author": "Kean",
+    "description": "Ace pages",
+    "namespace": "App\\Module\\Pages",
+    "version": "1.0",
+    "autoload": "psr-4"
+}

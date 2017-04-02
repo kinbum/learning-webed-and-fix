@@ -30,11 +30,6 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryContract::class, function () {
             $repository = new UserRepository(new User);
-
-            if (config('ace-caching.repository.enabled')) {
-                return new UserRepositoryCacheDecorator($repository);
-            }
-
             return $repository;
         });
     }

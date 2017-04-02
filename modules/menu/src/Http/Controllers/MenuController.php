@@ -22,7 +22,7 @@ class MenuController extends BaseAdminController
 
         $this->getDashboardMenu($this->module);
 
-        // $this->breadcrumbs->addLink('Menus', 'menus.index.get');
+        $this->breadcrumbs->addLink('Menus', 'menus.index.get');
     }
 
     public function getIndex(MenusListDataTable $menusListDataTable)
@@ -68,7 +68,7 @@ class MenuController extends BaseAdminController
             ->addJavascriptsDirectly('admin/modules/menu/edit-menu.js');
 
         $this->setPageTitle('Create menu');
-        // $this->breadcrumbs->addLink('Create menu');
+        $this->breadcrumbs->addLink('Create menu');
 
         $this->dis['object'] = $this->repository->getModel();
         $oldInputs = old();
@@ -143,7 +143,7 @@ class MenuController extends BaseAdminController
             ->addJavascriptsDirectly('admin/modules/menu/edit-menu.js');
 
         $this->setPageTitle('Edit menu', $item->title);
-        // $this->breadcrumbs->addLink('Edit menu');
+        $this->breadcrumbs->addLink('Edit menu');
 
         $this->dis['menuStructure'] = json_encode($item->all_menu_nodes);
 

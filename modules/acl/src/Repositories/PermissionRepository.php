@@ -1,13 +1,9 @@
 <?php namespace App\Module\Acl\Repositories;
 
-use App\Module\Caching\Services\Traits\Cacheable;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
-
 use App\Module\Acl\Repositories\Contracts\PermissionRepositoryContract;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 
-class PermissionRepository extends EloquentBaseRepository implements PermissionRepositoryContract, CacheableContract {
-    use Cacheable;
+class PermissionRepository extends EloquentBaseRepository implements PermissionRepositoryContract {
 
     protected $rules = [
         'name' => 'required|between:3,100|string',

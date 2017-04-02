@@ -25,7 +25,7 @@ class UserController extends BaseAdminController
     {
         parent::__construct();
         $this->repository = $userRepository;
-        // $this->breadcrumbs->addLink('Users', route('users.index.get'));
+        $this->breadcrumbs->addLink('Users', route('users.index.get'));
 
         $this->getDashboardMenu($this->module);
     }
@@ -118,7 +118,7 @@ class UserController extends BaseAdminController
     public function getCreate()
     {
         $this->setPageTitle('Create user');
-        // $this->breadcrumbs->addLink('Create user');
+        $this->breadcrumbs->addLink('Create user');
 
         $this->dis['isLoggedInUser'] = false;
         $this->dis['isSuperAdmin'] = $this->loggedInUser->isSuperAdmin();
@@ -197,7 +197,7 @@ class UserController extends BaseAdminController
         }
 
         $this->setPageTitle('Edit user', '#' . $id);
-        // $this->breadcrumbs->addLink('Edit user');
+        $this->breadcrumbs->addLink('Edit user');
 
         $this->dis['object'] = $item;
 

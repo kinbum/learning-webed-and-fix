@@ -24,7 +24,7 @@ class CachingController extends BaseAdminController
 
         $this->assets->addJavascripts('jquery-datatables');
 
-        return do_filter('caching.index.get', $this)->viewAdmin('index');
+        return do_filter('caching.index.get', $this)->view('index', null, 'admin');
     }
 
     /**
@@ -65,7 +65,7 @@ class CachingController extends BaseAdminController
         $this->flashMessagesHelper
             ->addMessages('Config cache created', 'success')
             ->showMessagesOnSession();
-
+        
         return redirect()->to(route('caching.index.get'));
     }
 

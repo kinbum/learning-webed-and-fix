@@ -53,6 +53,17 @@ class BootstrapModuleServiceProvider extends ServiceProvider
             'link' => route('dashboard.index.get'),
             'css_class' => null,
         ]);
+        
+        \DashboardMenu::registerItem([
+            'id' => 'ace-configuration',
+            'priority' => 999,
+            'parent_id' => null,
+            'heading' => 'Advanced',
+            'title' => 'Configurations',
+            'font_icon' => 'icon-settings',
+            'link' => route('settings.index.get'),
+            'css_class' => null,
+        ]);
 
     }
 

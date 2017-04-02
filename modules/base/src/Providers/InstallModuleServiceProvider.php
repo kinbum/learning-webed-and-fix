@@ -38,11 +38,6 @@ class InstallModuleServiceProvider extends ServiceProvider
         acl_permission()
             ->registerPermission('Access to dashboard', 'access-dashboard', $this->module)
             ->registerPermission('System commands', 'use-system-commands', $this->module);
-        $this->createSchema();
     }
 
-    private function createSchema()
-    {
-        \Artisan::call('module:migrate', ['alias' => $this->moduleAlias]);
-    }
 }

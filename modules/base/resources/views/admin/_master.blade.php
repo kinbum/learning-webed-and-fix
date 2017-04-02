@@ -23,7 +23,15 @@
 
     @stack('css-include')
     @yield('style')
-
+    <style>
+        .modal-open {
+            overflow-y: hidden !important;
+        }
+        .img-rectangle {
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+    </style>
     <link rel="shortcut icon" href="http://dishantagnihotri.com/public/img/acemble_favicon.png"/>
     <script type="text/javascript">
         var BASE_URL = '{{ asset('') }}',

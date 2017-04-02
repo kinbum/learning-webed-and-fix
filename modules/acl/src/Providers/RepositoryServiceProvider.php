@@ -33,18 +33,11 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(RoleRepositoryContract::class, function () {
             $repository = new RoleRepository(new Role);
-            if (config('ace-caching.repository.enabled')) {
-                return new RoleRepositoryCacheDecorator($repository);
-            }
-
+          
             return $repository;
         });
         $this->app->bind(PermissionRepositoryContract::class, function () {
             $repository = new PermissionRepository(new Permission);
-
-            if (config('ace-caching.repository.enabled')) {
-                return new PermissionRepositoryCacheDecorator($repository);
-            }
 
             return $repository;
         });

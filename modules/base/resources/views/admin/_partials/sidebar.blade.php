@@ -4,7 +4,7 @@
             <div class="user-panel">
                 <div class="pull-left image">
                     <img src="{{ get_image($loggedInUser->avatar) }}"
-                         class="img-circle"
+                         class="img-rectangle"
                          alt="{{ $loggedInUser->display_name or '' }}">
                 </div>
                 <div class="pull-left info">

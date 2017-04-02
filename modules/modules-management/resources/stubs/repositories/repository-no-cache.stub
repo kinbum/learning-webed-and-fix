@@ -1,0 +1,68 @@
+<?php namespace DummyNamespace;
+
+use App\Module\Base\Models\Contracts\BaseModelContract;
+use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
+
+use DummyNamespace\Contracts\DummyClassContract;
+
+class DummyClass extends EloquentBaseRepository implements DummyClassContract
+{
+    protected $rules = [
+
+    ];
+
+    protected $editableFields = [
+        '*',
+    ];
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    public function createModel(array $data)
+    {
+        return $this->editWithValidate(null, $data, true, false);
+    }
+
+    /**
+     * @param int|null|BaseModelContract $id
+     * @param array $data
+     * @return array
+     */
+    public function createOrUpdateModel($id, array $data)
+    {
+        $model = $id instanceof BaseModelContract ? $id : $this->find($id);
+        $justUpdateSomeFields = true;
+        if (!$model) {
+            $justUpdateSomeFields = false;
+        }
+
+        return $this->editWithValidate($model, $data, true, $justUpdateSomeFields);
+    }
+
+    /**
+     * @param int|null|BaseModelContract $id
+     * @param array $data
+     * @return array
+     */
+    public function updateModel($id, array $data)
+    {
+        return $this->editWithValidate($id, $data, true, true);
+    }
+
+    /**
+     * @param int|BaseModelContract|array $id
+     * @return array
+     */
+    public function deleteModel($id)
+    {
+        if (!$id) {
+            return response_with_messages('Model not exists', true, \Constants::ERROR_CODE);
+        }
+        $result = $this->delete($id);
+        if ($result['error']) {
+            return $result;
+        }
+        return response_with_messages('Deleted', false, \Constants::SUCCESS_NO_CONTENT_CODE);
+    }
+}

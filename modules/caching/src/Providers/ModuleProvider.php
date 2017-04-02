@@ -1,12 +1,6 @@
 <?php namespace  App\Module\Caching\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use  App\Module\Caching\Services\CacheItemPool;
-use  App\Module\Caching\Services\CacheService;
-use  App\Module\Caching\Services\Contracts\CacheItemPoolContract;
-use  App\Module\Caching\Services\Contracts\CacheServiceContract;
-use Illuminate\Contracts\Cache\Repository as LaravelRepositoryCacheContract;
-
 class ModuleProvider extends ServiceProvider
 {
     /**
@@ -17,9 +11,9 @@ class ModuleProvider extends ServiceProvider
     public function boot()
     {
         /*Load views*/
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'ace-caching');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'caching');
         /*Load translations*/
-        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'ace-caching');
+        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'caching');
 
         \Event::listen(['cache:cleared'], function () {
             \File::delete(config('ace-caching.repository.store_keys'));
@@ -27,10 +21,10 @@ class ModuleProvider extends ServiceProvider
         });
 
         $this->publishes([
-            __DIR__ . '/../../resources/views' => config('view.paths')[0] . '/vendor/ace-caching',
+            __DIR__ . '/../../resources/views' => config('view.paths')[0] . '/vendor/caching',
         ], 'views');
         $this->publishes([
-            __DIR__ . '/../../resources/lang' => base_path('resources/lang/vendor/ace-caching'),
+            __DIR__ . '/../../resources/lang' => base_path('resources/lang/vendor/caching'),
         ], 'lang');
         $this->publishes([
             __DIR__ . '/../../config' => base_path('config'),
@@ -49,10 +43,5 @@ class ModuleProvider extends ServiceProvider
 
         $this->mergeConfigFrom(__DIR__ . '/../../config/ace-caching.php', 'ace-caching');
 
-        //Bind some services
-        $this->app->bind(CacheItemPoolContract::class, function () {
-            return new CacheItemPool($this->app->make(LaravelRepositoryCacheContract::class));
-        });
-        $this->app->bind(CacheServiceContract::class, CacheService::class);
     }
 }

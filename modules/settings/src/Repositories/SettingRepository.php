@@ -1,12 +1,9 @@
 <?php namespace App\Module\Settings\Repositories;
 
-use App\Module\Caching\Services\Traits\Cacheable;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 use App\Module\Settings\Repositories\Contracts\SettingContract;
 
-class SettingRepository extends EloquentBaseRepository  implements SettingContract, CacheableContract {
-    use Cacheable;
+class SettingRepository extends EloquentBaseRepository  implements SettingContract {
 
     protected $rules = [
         'option_key' => 'required|unique:settings|string|max:100',

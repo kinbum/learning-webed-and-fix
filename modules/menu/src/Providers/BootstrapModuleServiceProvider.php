@@ -44,33 +44,33 @@ class BootstrapModuleServiceProvider extends ServiceProvider
             'permissions' => ['view-menus']
         ]);
 
-        // cms_settings()
-        //     ->addSettingField('main_menu', [
-        //         'group' => 'basic',
-        //         'type' => 'select',
-        //         'priority' => 3,
-        //         'label' => 'Main menu',
-        //         'helper' => 'Main menu of our website'
-        //     ], function () {
-        //         /**
-        //          * @var MenuRepository $menus
-        //          */
-        //         $menus = app(MenuRepositoryContract::class);
-        //         $menus = $menus->where('status', '=', 'activated')
-        //             ->get();
+        cms_settings()
+            ->addSettingField('main_menu', [
+                'group' => 'basic',
+                'type' => 'select',
+                'priority' => 3,
+                'label' => 'Main menu',
+                'helper' => 'Main menu of our website'
+            ], function () {
+                /**
+                 * @var MenuRepository $menus
+                 */
+                $menus = app(MenuRepositoryContract::class);
+                $menus = $menus->where('status', '=', 'activated')
+                    ->get();
 
-        //         $menusArr = [];
+                $menusArr = [];
 
-        //         foreach ($menus as $menu) {
-        //             $menusArr[$menu->slug] = $menu->title;
-        //         }
+                foreach ($menus as $menu) {
+                    $menusArr[$menu->slug] = $menu->title;
+                }
 
-        //         return [
-        //             'main_menu',
-        //             $menusArr,
-        //             get_settings('main_menu'),
-        //             ['class' => 'form-control']
-        //         ];
-        //     });
+                return [
+                    'main_menu',
+                    $menusArr,
+                    get_settings('main_menu'),
+                    ['class' => 'form-control']
+                ];
+            });
     }
 }

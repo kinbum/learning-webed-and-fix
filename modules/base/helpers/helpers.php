@@ -44,3 +44,13 @@ if (!function_exists('convert_timestamp_format')) {
         return $date->format($format);
     }
 }
+
+if (!function_exists('load_module_helpers')) {
+    /**
+     * @param $dir
+     */
+    function load_module_helpers($dir)
+    {
+        \App\Module\Base\Support\Helper::loadModuleHelpers($dir);
+    }
+}

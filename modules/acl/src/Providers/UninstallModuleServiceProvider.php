@@ -40,7 +40,7 @@ class UninstallModuleServiceProvider extends ServiceProvider
         //If you want to rollback your module migration
         // uncomment bellow statement
          
-//        \Artisan::call('module:migrate:rollback', ['alias' => $this->moduleAlias]);
+       \Artisan::call('module:migrate:rollback', ['alias' => $this->moduleAlias]);
 
     }
 }
