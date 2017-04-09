@@ -26,9 +26,9 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Yajra\\Datatables\\": "core/datatables/src/",
-            "Collective\\Html\\": "core/form-html-collective/src/",
-            "App\\Module\\Base\\": "modules/base/src/",
+            "Yajra\\Datatables\\": "modules/datatables/src/",
+            "Collective\\Html\\": "modules/form-html-collective/src/",
+            "App\\Module\\Base\\": "modules/base/src",
             "App\\Module\\AssetManagement\\": "modules/assets-management/src/",
             "App\\Module\\Menu\\": "modules/menu/src/",
             "App\\Module\\Hook\\": "modules/hook/src/",
@@ -39,7 +39,10 @@
             "App\\Module\\Elfinder\\": "modules/elfinder/src/",
             "App\\Module\\Settings\\": "modules/settings/src/",
             "App\\Module\\ModulesManagement\\": "modules/modules-management/src",
-            "App\\Module\\Pages\\": "modules/pages/src"
+            "App\\Module\\Pages\\": "modules/pages/src",
+            "App\\Module\\ThemesManagement\\": "modules/themes-management/src",
+            "App\\Plugins\\Blog\\": "plugins/blog/src",
+            "App\\Plugins\\CustomFields\\": "plugins/custom-fields/src"
         },
         "files": [
             "core/form-html-collective/src/helpers.php"

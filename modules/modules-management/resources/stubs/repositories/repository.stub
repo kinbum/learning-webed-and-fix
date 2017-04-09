@@ -2,15 +2,11 @@
 
 use App\Module\Base\Models\Contracts\BaseModelContract;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
-use App\Module\Caching\Services\Traits\Cacheable;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 
 use DummyNamespace\Contracts\DummyClassContract;
 
-class DummyClass extends EloquentBaseRepository implements DummyClassContract, CacheableContract
+class DummyClass extends EloquentBaseRepository implements DummyClassContract
 {
-    use Cacheable;
-
     protected $rules = [
 
     ];

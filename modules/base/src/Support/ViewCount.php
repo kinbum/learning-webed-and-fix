@@ -34,6 +34,7 @@ class ViewCount
             'entity' => $entity,
             'entity_id' => $entityId,
         ]);
+
         return $this->repository->increase($viewTracker);
     }
 }

@@ -25,7 +25,6 @@ class MenuManagement
             'type' => $type,
             'data' => $data,
         ];
-
         return $this;
     }
 
@@ -35,7 +34,6 @@ class MenuManagement
     public function getWidgets()
     {
         $widgets = $this->widgetBoxes;
-
         $result = [];
 
         /**
@@ -55,7 +53,6 @@ class MenuManagement
                 'data' => $widget['data'],
             ])->render();
         }
-
         return $result;
     }
 

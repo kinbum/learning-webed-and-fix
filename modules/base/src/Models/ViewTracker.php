@@ -9,7 +9,7 @@ class ViewTracker extends BaseModel implements ViewTrackerModelContract
 
     protected $primaryKey = 'id';
 
-    protected $fillable = [];
+    protected $fillable = ['entity', 'entity_id', 'count'];
 
     public $timestamps = false;
 

@@ -6,7 +6,7 @@ if (!function_exists('view_count')) {
      */
     function view_count()
     {
-        return \ViewCount::getFacadeRoot();
+        return \App\Module\Base\Facades\ViewCountFacade::getFacadeRoot();
     }
 }
 

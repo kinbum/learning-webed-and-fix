@@ -36,7 +36,7 @@ abstract class EloquentBaseRepository extends AbstractBaseRepository
         return $this;
     }
 
-    public function getSql() 
+    public function getSql()
     {
         $sql = $this->model->toSql();
         return $sql;
@@ -211,9 +211,9 @@ abstract class EloquentBaseRepository extends AbstractBaseRepository
         if (!$result) {
             $data = array_merge((array)$optionalFields, $fields);
             if ($forceCreate) {
-                $this->model->forceCreate($data);
+                $this->forceCreate($data);
             } else {
-                $this->model->create($data);
+                $this->create($data);
             }
             $this->model = $this->model->where($fields);
             $result = $this->model->first();

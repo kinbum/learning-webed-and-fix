@@ -1,0 +1,18 @@
+<?php namespace DummyNamespace;
+
+use WebEd\Base\Core\Criterias\AbstractCriteria;
+use WebEd\Base\Core\Repositories\AbstractBaseRepository;
+use WebEd\Base\Core\Repositories\Contracts\AbstractRepositoryContract;
+
+class DummyClass extends AbstractCriteria
+{
+     /**
+      * @param \WebEd\Base\Core\Models\Contracts\BaseModelContract $model
+      * @param AbstractBaseRepository $repository
+      * @return mixed
+      */
+    public function apply($model, AbstractRepositoryContract $repository)
+    {
+        return $model;
+    }
+}

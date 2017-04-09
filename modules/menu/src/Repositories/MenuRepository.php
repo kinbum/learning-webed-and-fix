@@ -1,17 +1,13 @@
 <?php namespace App\Module\Menu\Repositories;
 
-use App\Module\Caching\Services\Traits\Cacheable;
 use App\Module\Base\Models\Contracts\BaseModelContract;
 use App\Module\Base\Repositories\Eloquent\EloquentBaseRepository;
-use App\Module\Caching\Services\Contracts\CacheableContract;
 use App\Module\Menu\Models\Contracts\MenuModelContract;
 use App\Module\Menu\Repositories\Contracts\MenuNodeRepositoryContract;
 use App\Module\Menu\Repositories\Contracts\MenuRepositoryContract;
 
-class MenuRepository extends EloquentBaseRepository implements MenuRepositoryContract, CacheableContract
+class MenuRepository extends EloquentBaseRepository implements MenuRepositoryContract
 {
-    use Cacheable;
-
     protected $rules = [
         'title' => 'string|max:255|required',
         'slug' => 'string|max:255|alpha_dash|required',

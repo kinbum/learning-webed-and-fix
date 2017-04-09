@@ -43,7 +43,6 @@ abstract class AbstractBaseRepository implements AbstractRepositoryContract, Rep
     {
         $this->model = $model;
         $this->originalModel = $model;
-        $this->cacheEnabled = config('webed-caching.repository.enabled');
     }
 
     /**

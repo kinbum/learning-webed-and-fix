@@ -1,0 +1,9 @@
+{
+    "alias": "blog",
+    "name": "Ace blog",
+    "author": "kean",
+    "description": "Ace blog",
+    "namespace": "App\\Plugins\\Blog",
+    "version": "1.0",
+    "autoload": "psr-4"
+}

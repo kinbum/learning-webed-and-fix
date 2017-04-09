@@ -33,20 +33,10 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(MenuRepositoryContract::class, function () {
             $repository = new MenuRepository(new Menu());
-
-            if (config('ace-caching.repository.enabled')) {
-                return new MenuRepositoryCacheDecorator($repository);
-            }
-
             return $repository;
         });
         $this->app->bind(MenuNodeRepositoryContract::class, function () {
             $repository = new MenuNodeRepository(new MenuNode());
-
-            if (config('ace-caching.repository.enabled')) {
-                return new MenuNodeRepositoryCacheDecorator($repository);
-            }
-
             return $repository;
         });
     }

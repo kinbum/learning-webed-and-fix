@@ -59,7 +59,7 @@ if (!function_exists('webed_menu_render')) {
 
         $menuNodes = $nodeRepo->getMenuNodes($menu);
 
-        return view('webed-menu::front._renderer.menu', [
+        return view('menu::front._renderer.menu', [
             'menuNodes' => $menuNodes,
             'options' => $options,
             'container' => true,

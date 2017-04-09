@@ -2,7 +2,7 @@
 
 use App\Module\Acl\Models\Role;
 
-trait UserAuthorizable 
+trait UserAuthorizable
 {
     /**
      * Set relationship
@@ -12,7 +12,7 @@ trait UserAuthorizable
     {
         return $this->belongsToMany(Role::class, 'users_roles', 'user_id', 'role_id');
     }
-    
+
     /**
      * @return bool
      */
@@ -32,7 +32,7 @@ trait UserAuthorizable
      * @param array|string $roles
      * @return bool
      */
-     public function hasRoles ($roles) {
+     public function hasRole ($roles) {
         if ($this->isSuperAdmin()) {
             return true;
         }

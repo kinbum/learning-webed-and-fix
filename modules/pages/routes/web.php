@@ -37,3 +37,7 @@ Route::group([ 'prefix' => $adminPrefix . '/' . $moduleRoute ], function (Router
         ->name('pages.delete.delete')
         ->middleware('has-permission:delete-pages');
 });
+
+Route::get('/{slug?}', 'Front\ResolvePagesController@handle')
+      ->name('front.web.resolve-pages.get')
+      ->where('slug', '[-A-Za-z0-9]+');

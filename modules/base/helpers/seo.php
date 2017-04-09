@@ -6,6 +6,6 @@ if (!function_exists('seo')) {
      */
     function seo()
     {
-        return \WebEd\Base\Core\Facades\SeoFacade::getFacadeRoot();
+        return \App\Module\Base\Facades\SeoFacade::getFacadeRoot();
     }
 }

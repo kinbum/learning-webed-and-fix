@@ -1,0 +1,10 @@
+{
+    "alias": "blog",
+    "name": "Ace blog",
+    "author": "Kean",
+    "description": "Ace blog",
+    "namespace": "App\\Themes\\Blog",
+    "version": "1.0",
+    "autoload": "psr-4",
+    "require": {}
+}

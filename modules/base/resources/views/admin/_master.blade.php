@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="Admin dashboard - WebEd" name="description"/>
-    <base href="{{ asset('') }}">
+    <meta content="Admin dashboard - Ace panel" name="description"/>
+    <base href="/ace-panel">
     {!! Assets::renderStylesheets() !!}
     @php do_action('header_css') @endphp
 
@@ -32,7 +32,7 @@
             border: 1px solid rgba(255, 255, 255, 0.22);
         }
     </style>
-    <link rel="shortcut icon" href="http://dishantagnihotri.com/public/img/acemble_favicon.png"/>
+    <link rel="shortcut icon" href="{{ get_settings('favicon') }}"/>
     <script type="text/javascript">
         var BASE_URL = '{{ asset('') }}',
             FILE_MANAGER_URL = '{{ route('elfinder.popup.get') }}';

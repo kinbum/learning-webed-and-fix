@@ -50,9 +50,7 @@ class InstallModuleCommand extends Command
      */
     public function handle()
     {
-
         $module = get_module_information($this->argument('alias'));
-        
         if (!$module) {
             $this->error('Module not exists');
             die();

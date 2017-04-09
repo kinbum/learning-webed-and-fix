@@ -7,6 +7,7 @@ use App\Module\Base\Facades\FlashMessagesFacade;
 use App\Module\Base\Exceptions\Handler;
 use App\Module\Base\Support\Helper;
 use App\Module\Base\Facades\BreadcrumbsFacade;
+use App\Module\Base\Facades\AdminBarFacade;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -53,7 +54,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias('Form', \Collective\Html\FormFacade::class);
         AliasLoader::getInstance()->alias('Html', \Collective\Html\HtmlFacade::class);
-
+        AliasLoader::getInstance()->alias('AdminBar', AdminBarFacade::class);
         AliasLoader::getInstance()->alias('FlashMessages', FlashMessagesFacade::class);
         AliasLoader::getInstance()->alias('Breadcrumbs', BreadcrumbsFacade::class);
 
@@ -68,7 +69,7 @@ class ModuleProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(RepositoryServiceProvider::class);
         $this->app->register(BootstrapModuleServiceProvider::class);
-        
+
         $this->app->register(\Yajra\Datatables\DatatablesServiceProvider::class);
         $this->app->register(\Collective\Html\HtmlServiceProvider::class);
 
@@ -86,12 +87,15 @@ class ModuleProvider extends ServiceProvider
         $this->app->register(\App\Module\Hook\Providers\ModuleProvider::class);
         $this->app->register(\App\Module\Menu\Providers\ModuleProvider::class);
         $this->app->register(\App\Module\Settings\Providers\ModuleProvider::class);
-        // $this->app->register(\App\Module\ThemesManagement\Providers\ModuleProvider::class);
+        $this->app->register(\App\Module\ThemesManagement\Providers\ModuleProvider::class);
         $this->app->register(\App\Module\Users\Providers\ModuleProvider::class);
         $this->app->register(\App\Module\Pages\Providers\ModuleProvider::class);
+        $this->app->register(\App\Plugins\Blog\Providers\ModuleProvider::class);
+        // $this->app->register(\App\Plugins\CustomFields\Providers\ModuleProvider::class);
 
 
         $this->mergeConfigFrom(__DIR__ . '/../../config/ace.php', 'ace');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/ace-templates.php', 'ace-templates');
     }
 
     // protected function loadHelpers()

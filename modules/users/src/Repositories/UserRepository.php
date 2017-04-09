@@ -145,46 +145,46 @@ class UserRepository extends EloquentBaseRepository implements UserRepositoryCon
      * @param array $permissions
      * @return bool
      */
-    public function hasPermission($id, array $permissions)
-    {
-        if ($id instanceof UserModelContract) {
-            $model = $id;
-        } else {
-            $model = $this->find($id);
-        }
-
-        if (!$model) {
-            return false;
-        }
-
-        if (!$model->hasPermission($permissions)) {
-            return false;
-        }
-
-        return true;
-    }
+    // public function hasPermission($id, array $permissions)
+    // {
+    //     if ($id instanceof UserModelContract) {
+    //         $model = $id;
+    //     } else {
+    //         $model = $this->find($id);
+    //     }
+    //
+    //     if (!$model) {
+    //         return false;
+    //     }
+    //
+    //     if (!$model->hasPermission($permissions)) {
+    //         return false;
+    //     }
+    //
+    //     return true;
+    // }
 
     /**
      * @param User|int $id
      * @param array $roles
      * @return bool
      */
-    public function hasRole($id, array $roles)
-    {
-        if ($id instanceof UserModelContract) {
-            $model = $id;
-        } else {
-            $model = $this->find($id);
-        }
-
-        if (!$model) {
-            return false;
-        }
-
-        if (!$model->hasRole($roles)) {
-            return false;
-        }
-
-        return true;
-    }
+    // public function hasRole($id, array $roles)
+    // {
+    //     if ($id instanceof UserModelContract) {
+    //         $model = $id;
+    //     } else {
+    //         $model = $this->find($id);
+    //     }
+    //
+    //     if (!$model) {
+    //         return false;
+    //     }
+    //
+    //     if (!$model->hasRole($roles)) {
+    //         return false;
+    //     }
+    //
+    //     return true;
+    // }
 }

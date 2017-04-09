@@ -1,0 +1,9 @@
+{
+    "alias": "themes-management",
+    "name": "Ace Themes Management",
+    "author": "Tedozi Manson",
+    "description": "Themes management package.",
+    "namespace": "App\\Module\\ThemesManagement",
+    "autoload": "psr-4",
+    "version": "1.0"
+}

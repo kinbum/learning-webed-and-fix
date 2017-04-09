@@ -66,7 +66,7 @@ class SEO {
      */
     public function render()
     {
-        return view('webed-core::front._partials.meta-seo', [
+        return view('base::front._partials.meta-seo', [
             'seoMeta' => $this->seoMeta,
             'object' => $this->modelObject
         ])->render();

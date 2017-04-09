@@ -1,17 +1,15 @@
 <?php namespace DummyNamespace;
 
 use App\Module\Base\Http\DataTables\AbstractDataTables;
+use DummyNamespace\Model;
 
 class DummyClass extends AbstractDataTables
 {
-    protected $repository;
+    protected $model;
 
-    public function __construct(YourRepositoryContract $repository)
+    public function __construct()
     {
-        $this->repository = $repository;
-
-        $this->repository->select('id', 'created_at');
-
+        $this->model = Model::select('*');        
         parent::__construct();
     }
 
@@ -51,7 +49,7 @@ class DummyClass extends AbstractDataTables
      */
     protected function fetch()
     {
-        $this->fetch = datatable()->of($this->repository)
+        $this->fetch = datatable()->of($this->model)
             ->editColumn('id', function ($item) {
                 return form()->customCheckbox([['id[]', $item->id]]);
             });

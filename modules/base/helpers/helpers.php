@@ -54,3 +54,49 @@ if (!function_exists('load_module_helpers')) {
         \App\Module\Base\Support\Helper::loadModuleHelpers($dir);
     }
 }
+
+if (!function_exists('json_encode_prettify')) {
+    /**
+     * @param array $files
+     */
+    function json_encode_prettify($data)
+    {
+        return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    }
+}
+
+
+if (!function_exists('limit_chars')) {
+    /**
+     * @param $string
+     * @param null $limit
+     * @param string $append
+     * @param bool $hardCutString
+     * @return string
+     */
+    function limit_chars($string, $limit = null, $append = '...', $hardCutString = false)
+    {
+        if (!$limit) {
+            return $string;
+        }
+        if (mb_strlen($string) <= $limit) {
+            $append = '';
+        }
+        if (!$hardCutString) {
+            if (!$limit || $limit < 0) {
+                return $string;
+            }
+            if (mb_strlen($string) <= $limit) {
+                $append = '';
+            }
+            $string = strip_tags($string);
+            $string = mb_substr($string, 0, $limit);
+            if (mb_substr($string, -1, 1) != ' ') {
+                $string = mb_substr($string, 0, mb_strrpos($string, ' '));
+            }
+
+            return $string . $append;
+        }
+        return mb_substr($string, 0, $limit) . $append;
+    }
+}

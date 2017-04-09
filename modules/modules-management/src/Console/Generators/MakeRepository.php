@@ -49,10 +49,10 @@ class MakeRepository extends AbstractGenerator
         /**
          * Make cache decorator
          */
-        $this->buildStep = 'make-cache-decorator';
-        $pathCacheDecorator = $this->getPath($name . 'CacheDecorator');
-        $this->makeDirectory($pathCacheDecorator);
-        $this->files->put($pathCacheDecorator, $this->buildClass($name));
+        // $this->buildStep = 'make-cache-decorator';
+        // $pathCacheDecorator = $this->getPath($name . 'CacheDecorator');
+        // $this->makeDirectory($pathCacheDecorator);
+        // $this->files->put($pathCacheDecorator, $this->buildClass($name));
 
         /**
          * Create model contract

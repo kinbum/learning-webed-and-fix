@@ -1,0 +1,9 @@
+{
+    "alias": "custom-fields",
+    "name": "Ace custom-fields",
+    "author": "webed",
+    "description": "Ace custom-fields",
+    "namespace": "App\\Plugins\\CustomFields",
+    "version": "1.0",
+    "autoload": "psr-4"
+}

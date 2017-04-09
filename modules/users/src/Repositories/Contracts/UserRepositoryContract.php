@@ -34,12 +34,12 @@ interface UserRepositoryContract
      * @param array $permissions
      * @return bool
      */
-    public function hasPermission($id, array $permissions);
+    // public function hasPermission($id, array $permissions);
 
     /**
      * @param User|int $id
      * @param array $roles
      * @return bool
      */
-    public function hasRole($id, array $roles);
+    // public function hasRole($id, array $roles);
 }

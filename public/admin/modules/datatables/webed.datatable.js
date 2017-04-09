@@ -168,7 +168,6 @@ WebEd.DataTable = function () {
             tableOptions = $.extend(true, tableOptions, options);
 
             $table = table;
-            console.log($table);
 
             tableOptions.language = options.language;
 

@@ -1,0 +1,70 @@
+<?php namespace DummyNamespace\Http\Controllers;
+
+use WebEd\Base\Caching\Services\CacheService;
+use WebEd\Base\Caching\Services\Contracts\CacheableContract;
+use WebEd\Base\Caching\Services\Traits\Cacheable;
+use WebEd\Base\Core\Http\Controllers\BaseFrontController;
+
+abstract class AbstractController extends BaseFrontController implements CacheableContract
+{
+    use Cacheable;
+
+    /**
+     * @var CacheService
+     */
+    protected $cacheService;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->cacheEnabled = true;
+
+        $this->cacheService = app(CacheService::class);
+
+        $this->cacheService
+            ->setCacheObject($this)
+            /**
+             * Cache forever
+             */
+            ->setCacheLifetime(-1)
+            ->setCacheDriver('file');
+    }
+
+    /**
+     * Override some menu attributes
+     *
+     * @param $type
+     * @param $relatedId
+     * @return null|string|mixed
+     */
+    protected function getMenu($type, $relatedId)
+    {
+        $menuHtml = $this->cacheService
+            ->setCacheKey(__FUNCTION__, func_get_args())
+            ->retrieveFromCache(function () use ($type, $relatedId) {
+                return webed_menu_render(get_settings('main_menu', 'main-menu'), [
+                    'id' => '',
+                    'class' => 'nav navbar-nav navbar-right',
+                    'container_class' => 'collapse navbar-collapse',
+                    'has_sub_class' => 'dropdown',
+                    'container_tag' => 'nav',
+                    'container_id' => '',
+                    'group_tag' => 'ul',
+                    'child_tag' => 'li',
+                    'submenu_class' => 'sub-menu',
+                    'item_class' => '',
+                    'active_class' => 'active current-menu-item',
+                    'menu_active' => [
+                        'type' => $type,
+                        'related_id' => $relatedId,
+                    ]
+                ]);
+            });
+
+        view()->share([
+            'cmsMenuHtml' => $menuHtml
+        ]);
+        return $menuHtml;
+    }
+}

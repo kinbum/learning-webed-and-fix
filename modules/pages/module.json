@@ -5,5 +5,7 @@
     "description": "Ace pages",
     "namespace": "App\\Module\\Pages",
     "version": "1.0",
-    "autoload": "psr-4"
+    "autoload": "psr-4",
+    "enabled": true,
+    "installed": true
 }
